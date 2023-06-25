@@ -1,8 +1,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "cliente.h"
+#include "acerca.h"
+#include "listaclientes.h"
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QFileDialog>
+#include <QDataStream>>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -18,8 +23,14 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-private:
+    void on_bttnClientes_clicked();
 
+    void on_bttnGuardar_clicked();
+
+    void on_actionAcerca_de_triggered();
+
+private:
+    QString currentFilePath;
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

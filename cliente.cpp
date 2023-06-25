@@ -1,11 +1,6 @@
 #include "cliente.h"
 
 
-Cliente::Cliente()
-{
-
-}
-
 Cliente::Cliente(const string &textoCompleto) {
    procesoInformacion(textoCompleto);
 }
@@ -85,17 +80,17 @@ void Cliente::procesoInformacion(const string &textoCompleto) {
             string value = campos[1].trimmed().toStdString();
 
             // Es un condicional para que por si acaso me coloque diferente el formulario igual me toma los datos
-            if (label == "Nombre completo" || label == "Nombres") {
+            if (label == "Nombre completo") {
                 QStringList nombreCompleto = campos[1].split(" ");
                 setName(nombreCompleto[0].trimmed().toStdString() + " " + nombreCompleto[1].trimmed().toStdString());
                 setLastName(nombreCompleto[2].trimmed().toStdString() + " " + nombreCompleto[3].trimmed().toStdString());
-            } else if (label == "Cédula" || label == "Cedula" ) {
+            } else if (label == "Cédula") {
                 setCedula(value);
-            } else if (label == "Dirección" || label == "Direccion") {
+            } else if (label == "Dirección") {
                 setDireccion(value);
-            } else if (label == "Teléfono" || label == "Telefono") {
+            } else if (label == "Teléfono") {
                 setTelefono(value);
-            } else if (label == "Correo electrónico" || label == "Correo electronico" || "Email") {
+            } else if (label == "Correo electrónico") {
                 setEmail(value);
             }
         }
