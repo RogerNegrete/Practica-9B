@@ -80,17 +80,17 @@ void Cliente::procesoInformacion(const string &textoCompleto) {
             string value = campos[1].trimmed().toStdString();
 
             // Es un condicional para que por si acaso me coloque diferente el formulario igual me toma los datos
-            if (label == "Nombre completo") {
+            if (label == "Nombre completo"||label == "Nombres") {
                 QStringList nombreCompleto = campos[1].split(" ");
                 setName(nombreCompleto[0].trimmed().toStdString() + " " + nombreCompleto[1].trimmed().toStdString());
                 setLastName(nombreCompleto[2].trimmed().toStdString() + " " + nombreCompleto[3].trimmed().toStdString());
-            } else if (label == "Cédula") {
+            } else if (label == "Cédula"||label == "Cedula") {
                 setCedula(value);
-            } else if (label == "Dirección") {
+            } else if (label == "Dirección"||label == "Direccion") {
                 setDireccion(value);
-            } else if (label == "Teléfono") {
+            } else if (label == "Teléfono"||label == "Telefono") {
                 setTelefono(value);
-            } else if (label == "Correo electrónico") {
+            } else if (label == "Correo electrónico"||label == "Correo electronico"||label == "Email") {
                 setEmail(value);
             }
         }
